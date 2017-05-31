@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>小蓝自动柜员机</title>
+<link rel="stylesheet" href="assets/css/reset.css">
+<link rel="stylesheet" href="assets/css/game.css">
+<link rel="stylesheet" href="assets/css/animation.css">
+</head>
+<body> 
+<!-- loading 页面 -->
+<div id="loading" class="">
+    <div class="loading-logo">
+           <img src="assets/images/loading.png"></div>
+	<div id="loadPer" class="loading-txt">loading...1%</div>
+    <div id="audiocontainer">
+        <audio id="bgsound" loop="loop" autoplay="autoplay">
+            <source src="assets/music/music.mp3">
+        </audio>
+    </div>
+</div>
+<div class="game-wall">
+	<!-- 第一页 -->
+    <div class="bg"><img src="assets/images/bg.jpg"></div> <!--bg-->
+	<div class="container1 hide">
+		<div class="pagination">
+            <div class="page1-title">
+                    <img src="assets/images/page1_title.png"></div>
+            <div class="page1-pic">
+                    <img src="assets/images/page1_pic.png"></div>
+            <div class="page1-txt">
+                    <img src="assets/images/page1_txt.png"></div>
+            <div class="page1-finger">
+                    <img src="assets/images/page1_finger.png"></div>  
+		</div>
+	</div>
+
+	<!-- 第二页 -->
+	<div class="container2 hide">	
+        <div class="pagination"> 
+            <div class="page2-bg">
+                 <img src="assets/images/page2_bg.png"></div> 
+            <div class="page2-text">
+                 <input type="text" value="" id="txt" readonly="readonly" placeholder="你的手机号码">
+            </div>
+            <div class="page2-btn1">
+                    <img src="assets/images/page2_btn1.png"></div>
+            <div class="page2-btn2">
+                    <img src="assets/images/page2_btn2.png"></div>
+            <div class="page2-iphone">
+                <ul>
+                    <li data-num="1"><img src="assets/images/page2_number1.png"></li>
+                    <li data-num="2"><img src="assets/images/page2_number2.png"></li>
+                    <li data-num="3"><img src="assets/images/page2_number3.png"></li>
+                    <li data-num="4"><img src="assets/images/page2_number4.png"></li>
+                    <li data-num="5"><img src="assets/images/page2_number5.png"></li>
+                    <li data-num="6"><img src="assets/images/page2_number6.png"></li>
+                    <li data-num="7"><img src="assets/images/page2_number7.png"></li>
+                    <li data-num="8"><img src="assets/images/page2_number8.png"></li>
+                    <li data-num="9"><img src="assets/images/page2_number9.png"></li>
+                    <li data-num=""></li>
+                    <li data-num="0"><img src="assets/images/page2_number0.png"></li>
+                </ul>
+                <div class="page2-pre">
+                    <img src="assets/images/page2_pre.png"></div>
+            </div>
+        </div>
+	</div>
+    <!--page3-->
+    <div class="container3 hide">
+        <div class="pagination">
+            <div class="page3-pic">
+                    <img src="assets/images/page3_pic.png"></div>
+            <div class="page3-txt">
+                    <img src="assets/images/page3_txt.png"></div>
+            <div class="page3-colorful1">
+                    <img src="assets/images/page3_colorful1.png"></div>
+            <div class="page3-colorful2">
+                    <img src="assets/images/page3_colorful2.png"></div>
+            <div class="page3-finger">
+                    <img src="assets/images/page1_finger.png"></div>
+        </div>
+    </div>
+    <!--page4-->
+    <div class="container4 hide">
+        <div class="pagination">
+            <div class="page4-pic">
+                    <img src="assets/images/page4_pic.png"></div>
+            <div class="page4-btn1">
+                    <img src="assets/images/page4_btn1.png"></div>
+            <a class="page4-btn2">
+                    <img src="assets/images/page4_btn2.png"></a>
+        </div>
+    </div>
+   <!--page end-->
+</div>
+<script src="assets/js/jquery-3.1.0.min.js"></script>
+<script src="assets/js/screen.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+//微信分享调用配置微信  jssdk  后端配置
+    // wx.config({
+    //     // debug: true,
+    //     appId: '<?= $js_sign['appId']; ?>',
+    //     timestamp: <?= $js_sign['timestamp']; ?>,
+    //     nonceStr: '<?= $js_sign['nonceStr']; ?>',
+    //     signature: '<?= $js_sign['signature']; ?>',
+    //     jsApiList: [
+    //         'onMenuShareTimeline',
+    //         'onMenuShareAppMessage',
+    //         'onMenuShareQQ',
+    //         'onMenuShareWeibo',
+    //         'chooseImage',
+    //         'uploadImage'
+    //     ]
+    // });
+
+var screenScale = new screen({
+    width:640,
+    height:960,	
+    object:'.pagination',
+    standard:'orientation',
+    alignment:'center',
+    success:function(){
+        $(".pagination").show();
+    }
+});
+</script>
+<script src="assets/js/game.js"></script>
+</body>
+</html>
